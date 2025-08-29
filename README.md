@@ -1,16 +1,24 @@
-# Project Title
+# 🚀 BioVerse X — by Tarun Saroha
 
-A short description of your project goes here.  
-(Example: "This is a simple HTML project where I added an image, styled it, and shifted it to the left with smooth corners.")
+**BioVerse X** is a futuristic personal website designed to showcase my biological, computational, and aesthetic work in one sci-fi-themed space.
+
+### 🌐 Live Site:
+
+[https://krait-mafia.github.io/Tarun](https://krait-mafia.github.io/Tarun)
+
+### 🔬 Features:
+
+- ⚛️ Animated particle backgrounds with Vanta.js
+- 🎨 Dark/Light theme toggle
+- 🔡 Auto-typing text with Typed.js
+- 🧬 Skill bars & project dock
+- 🧠 Fully responsive sci-fi UI
+
+### 📁 Technologies Used:
+
+- HTML, CSS, JS
+- GSAP, Vanta.js, Typed.js
 
 ---
 
-## 🚀 Features
-- Image display in HTML  
-- Resizing and positioning images  
-- Smooth rounded corners with CSS  
-- Beginner-friendly structure  
-
----
-
-## 📂 Project Structure
+© 2025 Tarun Saroha — Designed with love & latex.

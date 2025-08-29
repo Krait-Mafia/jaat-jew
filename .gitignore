@@ -1,0 +1,15 @@
+# Ignore OS/system files
+.DS_Store
+Thumbs.db
+
+# Node or build files (if used in future)
+node_modules/
+dist/
+build/
+
+# Log files
+*.log
+
+# Mac/VSCode/specific ignores
+.vscode/
+.env
