@@ -4,7 +4,7 @@
 
 ### 🌐 Live Site:
 
-[https://krait-mafia.github.io/Tarun](https://krait-mafia.github.io/jaat-jew)
+[https://krait-mafia.github.io/jaat-jew](https://krait-mafia.github.io/jaat-jew)
 
 ### 🔬 Features:
 
@@ -22,4 +22,5 @@
 ---
 
 © 2025 Tarun Saroha — Designed with love & latex.
+
 
