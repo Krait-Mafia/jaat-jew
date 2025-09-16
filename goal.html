@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Academic Love & Growth Journey</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #34495e;
+            --accent: #7d8fa1;
+            --dark: #2c3e50;
+            --light: #f9f7f1;
+            --success: #a3be8c;
+            --warning: #ebcb8b;
+            --danger: #bf616a;
+            --text: #2c3e50;
+            --background: #f9f7f1;
+            --card-bg: #ffffff;
+            --love: #8a5a44;
+            --moon: #e8e1d5;
+            --starry-night: #1a1a2e;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Crimson Text', serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--starry-night) 0%, #16213e 100%);
+            color: var(--light);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .starry-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+
+        .moon {
+            position: fixed;
+            top: 50px;
+            right: 50px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--moon) 30%, rgba(232, 225, 213, 0.3) 70%);
+            box-shadow: 0 0 30px rgba(232, 225, 213, 0.5);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .background-art {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20,20 C40,0 60,0 80,20 C100,40 100,60 80,80 C60,100 40,100 20,80 C0,60 0,40 20,20 Z' fill='%23ffffff'/%3E%3C/svg%3E");
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.8) 0%, rgba(52, 73, 94, 0.8) 100%);
+            color: var(--light);
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            color: var(--light);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            animation: pulse 4s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            background: linear-gradient(to right, #f9f7f1, #d7cebd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-style: italic;
+            opacity: 0.9;
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #d7cebd;
+        }
+
+        .typed-text {
+            min-height: 2rem;
+            margin-top: 15px;
+            color: var(--accent);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(90deg, rgba(44, 62, 80, 0.8) 0%, rgba(125, 143, 161, 0.8) 100%);
+            padding: 15px;
+            position: relative;
+            z-index: 2;
+            flex-wrap: wrap;
+            backdrop-filter: blur(5px);
+        }
+
+        .nav-item {
+            padding: 12px 25px;
+            cursor: pointer;
+            border-radius: 30px;
+            margin: 5px;
+            transition: var(--transition);
+            color: white;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .nav-item:hover::before {
+            left: 100%;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background: var(--light);
+            color: var(--dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .content {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 900px) {
+            .content {
+                grid-template-columns: 1fr;
+                padding: 20px;
+                gap: 20px;
+            }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+        }
+
+        .card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        h2 {
+            color: var(--light);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--light);
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            font-family: 'Crimson Text', serif;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(125, 143, 161, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        button {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            padding: 14px 26px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        button:hover::before {
+            left: 100%;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(44, 62, 80, 0.3);
+        }
+
+        .entry {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            position: relative;
+            border-left: 3px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .entry:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .entry-date {
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .entry-content {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .entry-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .btn-delete {
+            background: var(--danger);
+            padding: 8px 14px;
+            font-size: 0.9rem;
+        }
+
+        .quote {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.3) 0%, rgba(125, 143, 161, 0.3) 100%);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .quote-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 15px;
+            line-height: 1.7;
+            color: var(--light);
+        }
+
+        .quote-author {
+            text-align: right;
+            font-weight: 500;
+            color: var(--accent);
+        }
+
+        .priority {
+            display: flex;
+            gap: 5px;
+            margin-top: 15px;
+        }
+
+        .priority-star {
+            color: #555;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .priority-star:hover,
+        .priority-star.active {
+            color: gold;
+            transform: scale(1.2);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.5) 0%, rgba(125, 143, 161, 0.5) 100%);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .stat-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(44, 62, 80, 0.8);
+            color: var(--light);
+            margin-top: 40px;
+            font-style: italic;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .motivation {
+            text-align: center;
+            padding: 20px;
+            font-style: italic;
+            color: var(--accent);
+            font-size: 1.2rem;
+            background: rgba(44, 62, 80, 0.3);
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .page {
+            display: none;
+            grid-column: 1 / -1;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .page.active {
+            display: grid;
+        }
+
+        @media (max-width: 900px) {
+            .page {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .quote-priority {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .priority-badge {
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .priority-high {
+            background: var(--primary);
+            color: white;
+        }
+
+        .priority-medium {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        .priority-low {
+            background: rgba(215, 206, 189, 0.3);
+            color: var(--light);
+        }
+
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 8px 25px rgba(44, 62, 80, 0.4);
+            cursor: pointer;
+            z-index: 100;
+            transition: var(--transition);
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1) rotate(90deg);
+            box-shadow: 0 12px 30px rgba(44, 62, 80, 0.5);
+        }
+        
+        .deadline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--primary);
+            transition: var(--transition);
+        }
+        
+        .deadline-item:hover {
+            transform: translateX(5px);
+            background: rgba(255, 255, 255, 0.12);
+        }
+        
+        .deadline-info {
+            flex: 1;
+        }
+        
+        .deadline-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--light);
+        }
+        
+        .deadline-date {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+        
+        .deadline-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 5px;
+            width: 65%;
+            transition: width 1s ease;
+        }
+        
+        .academic-goal {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 3px solid var(--accent);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .academic-goal:hover {
+            transform: translateX(5px);
+            background: rgba(255, 255, 255, 0.12);
+        }
+        
+        .goal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .goal-title {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--light);
+        }
+        
+        .goal-date {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+        
+        .love-note {
+            background: linear-gradient(135deg, rgba(138, 90, 68, 0.3) 0%, rgba(125, 143, 161, 0.3) 100%);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Frost-inspired decorative elements */
+        .frost-border {
+            border: 1px solid rgba(215, 206, 189, 0.3);
+            border-radius: 8px;
+        }
+        
+        .frost-shadow {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .text-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* New styles for charts */
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 20px 0;
+        }
+
+        .learning-category {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        .quote-item, .learning-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            border-left: 3px solid var(--primary);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .quote-item:hover, .learning-item:hover {
+            transform: translateX(5px);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 30px;
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tab {
+            padding: 12px 24px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: var(--transition);
+        }
+
+        .tab.active {
+            border-bottom: 3px solid var(--primary);
+            color: var(--light);
+            font-weight: 600;
+        }
+
+        .tab:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .memory-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .memory-card {
+            position: relative;
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .memory-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .memory-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .memory-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 15px;
+            color: white;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .memory-card:hover .memory-overlay {
+            transform: translateY(0);
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .countdown-item {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            min-width: 80px;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--light);
+        }
+
+        .countdown-label {
+            font-size: 0.8rem;
+            color: var(--accent);
+        }
+
+        .heart-animation {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            animation: floatHeart 5s forwards;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(var(--x), var(--y)) scale(0.5);
+            }
+        }
+
+        .milestone {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+        }
+
+        .milestone::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+        }
+
+        .milestone-date {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .milestone-content {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .audio-player {
+            margin-top: 20px;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(191, 97, 106, 0.2);
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            color: var(--light);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .delete-btn:hover {
+            background: var(--danger);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="starry-background" id="starry-background"></div>
+    <div class="moon"></div>
+    
+    <div class="container">
+        <div class="background-art"></div>
+        
+        <header>
+            <div class="header-content">
+                <div class="logo"><i class="fas fa-moon"></i></div>
+                <h1>I Love You & Moon</h1>
+                <p class="tagline">I can wait for eternity, and forsake a thousand heavens just to be with you</p>
+                <div class="typed-text" id="typed-text"></div>
+            </div>
+        </header>
+
+        <div class="nav">
+            <div class="nav-item active" data-target="dashboard">
+                <i class="fas fa-home"></i> Dashboard
+            </div>
+            <div class="nav-item" data-target="academic">
+                <i class="fas fa-graduation-cap"></i> Academic
+            </div>
+            <div class="nav-item" data-target="progress">
+                <i class="fas fa-chart-line"></i> Progress
+            </div>
+            <div class="nav-item" data-target="memories">
+                <i class="fas fa-heart"></i> Our Memories
+            </div>
+            <div class="nav-item" data-target="learnings">
+                <i class="fas fa-lightbulb"></i> Learnings
+            </div>
+            <div class="nav-item" data-target="quotes">
+                <i class="fas fa-quote-left"></i> Quotes
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Dashboard Page -->
+            <div class="page active" id="dashboard-page">
+                <div>
+                    <div class="card">
+                        <h2><i class="fas fa-feather-alt"></i> Welcome to Our Home</h2>
+                        <div class="love-note">
+                            "The woods are lovely, dark and deep, But I have promises to keep, And miles to go before I sleep." - Robert Frost
+                        </div>
+                        <div class="countdown">
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="days">0</div>
+                                <div class="countdown-label">Days</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="hours">0</div>
+                                <div class="countdown-label">Hours</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="minutes">0</div>
+                                <div class="countdown-label">Minutes</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="seconds">0</div>
+                                <div class="countdown-label">Seconds</div>
+                            </div>
+                        </div>
+                        <div class="stats">
+                            <div class="stat-box">
+                                <div class="stat-number" id="goals-count">0</div>
+                                <div class="stat-label">Active Goals</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number" id="deadlines-count">0</div>
+                                <div class="stat-label">Upcoming Deadlines</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number" id="learnings-count">0</div>
+                                <div class="stat-label">Learnings</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h2><i class="fas fa-graduation-cap"></i> Academic Progress</h2>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="gpa-progress"></div>
+                        </div>
+                        <p>Current GPA: <span id="current-gpa">7.75</span></p>
+                        <p>Target GPA: <span id="target-gpa">8.8</span></p>
+                        <p>Overall Progress: <span id="overall-progress">65%</span></p>
+                    </div>
+
+                    <div class="card">
+                        <h2><i class="fas fa-lightbulb"></i> Recent Learnings</h2>
+                        <div id="recent-learnings">
+                            <div class="empty-state">No learnings yet. Add your first learning!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="card">
+                        <h2><i class="fas fa-tasks"></i> Upcoming Deadlines</h2>
+                        <div id="upcoming-deadlines">
+                            <div class="empty-state">No deadlines yet. Add your first deadline!</div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h2><i class="fas fa-bullseye"></i> Current Goals</h2>
+                        <div id="current-goals">
+                            <div class="empty-state">No goals yet. Set your first goal!</div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h2><i class="fas fa-quote-left"></i> Favorite Quote</h2>
+                        <div id="favorite-quote">
+                            <div class="empty-state">No quotes yet. Add your first quote!</div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h2><i class="fas fa-music"></i> Our Song</h2>
+                        <p>I  LOVE  YOU  MORE  THAN  MUSIC</p>
+                        <audio class="audio-player" controls>
+                            <source src="rough.m4a" type="audio/mpeg" id="our-song">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Academic Page -->
+            <div class="page" id="academic-page">
+                <div class="card">
+                    <h2><i class="fas fa-graduation-cap"></i> Academic Goals</h2>
+                    <div class="form-group">
+                        <label for="goal-title">Goal Title</label>
+                        <input type="text" id="goal-title" placeholder="e.g., Maintain 8.8 GPA">
+                    </div>
+                    <div class="form-group">
+                        <label for="goal-description">Description</label>
+                        <textarea id="goal-description" placeholder="Describe your academic goal..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="goal-deadline">Target Date</label>
+                        <input type="date" id="goal-deadline">
+                    </div>
+                    <div class="form-group">
+                        <label for="goal-priority">Priority</label>
+                        <select id="goal-priority">
+                            <option value="high">High</option>
+                            <option value="medium">Medium</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </div>
+                    <button id="save-goal"><i class="fas fa-save"></i> Save Goal</button>
+                </div>
+
+                <div class="card">
+                    <h2><i class="fas fa-calendar-day"></i> Academic Deadlines</h2>
+                    <div class="form-group">
+                        <label for="deadline-title">Deadline Title</label>
+                        <input type="text" id="deadline-title" placeholder="e.g., Final Exam">
+                    </div>
+                    <div class="form-group">
+                        <label for="deadline-date">Due Date</label>
+                        <input type="date" id="deadline-date">
+                    </div>
+                    <div class="form-group">
+                        <label for="deadline-course">Course/Subject</label>
+                        <input type="text" id="deadline-course" placeholder="e.g., Advanced Mathematics">
+                    </div>
+                    <div class="form-group">
+                        <label for="deadline-priority">Priority</label>
+                        <select id="deadline-priority">
+                            <option value="high">High</option>
+                            <option value="medium">Medium</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </div>
+                    <button id="save-deadline"><i class="fas fa-save"></i> Save Deadline</button>
+                </div>
+            </div>
+
+            <!-- Progress Page -->
+            <div class="page" id="progress-page">
+                <div class="card">
+                    <h2><i class="fas fa-chart-line"></i> Progress Tracking</h2>
+                    <div class="tabs">
+                        <div class="tab active" data-tab="gpa">GPA Trend</div>
+                        <div class="tab" data-tab="goals">Goals Progress</div>
+                        <div class="tab" data-tab="time">Study Time</div>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <canvas id="progress-chart"></canvas>
+                    </div>
+                    
+                    <div class="stats">
+                        <div class="stat-box">
+                            <div class="stat-number" id="avg-study-hours">5.2</div>
+                            <div class="stat-label">Avg. Study Hours/Day</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number" id="goals-completed">12</div>
+                            <div class="stat-label">Goals Completed</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number" id="gpa-improvement">+0.5</div>
+                            <div class="stat-label">GPA Improvement</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2><i class="fas fa-calendar-check"></i> Study Log</h2>
+                    <div class="form-group">
+                        <label for="study-date">Date</label>
+                        <input type="date" id="study-date">
+                    </div>
+                    <div class="form-group">
+                        <label for="study-hours">Hours Studied</label>
+                        <input type="number" id="study-hours" placeholder="e.g., 3.5" step="0.5" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="study-subject">Subject</label>
+                        <input type="text" id="study-subject" placeholder="e.g., Mathematics">
+                    </div>
+                    <div class="form-group">
+                        <label for="study-notes">Notes</label>
+                        <textarea id="study-notes" placeholder="What did you focus on?"></textarea>
+                    </div>
+                    <button id="save-study-log"><i class="fas fa-save"></i> Save Log</button>
+                </div>
+            </div>
+
+            <!-- Other pages would be here -->
+            <div class="page" id="memories-page">
+                <div class="card">
+                    <h2><i class="fas fa-heart"></i> Our Memories</h2>
+                    <p>Add and cherish your special moments together</p>
+                    <div class="form-group">
+                        <label for="memory-title">Memory Title</label>
+                        <input type="text" id="memory-title" placeholder="e.g., Our First Date">
+                    </div>
+                    <div class="form-group">
+                        <label for="memory-date">Date</label>
+                        <input type="date" id="memory-date">
+                    </div>
+                    <div class="form-group">
+                        <label for="memory-description">Description</label>
+                        <textarea id="memory-description" placeholder="Describe this special memory..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="memory-image">Upload Image</label>
+                        <input type="file" id="memory-image" accept="image/*">
+                    </div>
+                    <button id="save-memory"><i class="fas fa-save"></i> Save Memory</button>
+                </div>
+
+                <div class="card">
+                    <h2><i class="fas fa-images"></i> Memory Gallery</h2>
+                    <div class="memory-container" id="memory-container">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="page" id="learnings-page">
+                <div class="card">
+                    <h2><i class="fas fa-lightbulb"></i> Add New Learning</h2>
+                    <div class="form-group">
+                        <label for="learning-title">Learning Title</label>
+                        <input type="text" id="learning-title" placeholder="e.g., Calculus Fundamentals">
+                    </div>
+                    <div class="form-group">
+                        <label for="learning-category">Category</label>
+                        <select id="learning-category">
+                            <option value="mathematics">Mathematics</option>
+                            <option value="science">Science</option>
+                            <option value="literature">Literature</option>
+                            <option value="programming">Programming</option>
+                            <option value="philosophy">Philosophy</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="learning-description">What You Learned</label>
+                        <textarea id="learning-description" placeholder="Describe what you've learned..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="learning-date">Date</label>
+                        <input type="date" id="learning-date">
+                    </div>
+                    <button id="save-learning"><i class="fas fa-save"></i> Save Learning</button>
+                </div>
+
+                <div class="card">
+                    <h2><i class="fas fa-book-open"></i> My Learnings</h2>
+                    <div id="learnings-container">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="page" id="quotes-page">
+                <div class="card">
+                    <h2><i class="fas fa-quote-left"></i> Add New Quote</h2>
+                    <div class="form-group">
+                        <label for="quote-text">Quote</label>
+                        <textarea id="quote-text" placeholder="Enter an inspiring quote..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="quote-author">Author</label>
+                        <input type="text" id="quote-author" placeholder="Author name">
+                    </div>
+                    <div class="form-group">
+                        <label for="quote-category">Category</label>
+                        <select id="quote-category">
+                            <option value="love">Love</option>
+                            <option value="academic">Academic</option>
+                            <option value="motivation">Motivation</option>
+                            <option value="life">Life</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Priority</label>
+                        <div class="priority">
+                            <i class="fas fa-star priority-star" data-value="1"></i>
+                            <i class="fas fa-star priority-star" data-value="2"></i>
+                            <i class="fas fa-star priority-star" data-value="3"></i>
+                            <i class="fas fa-star priority-star" data-value="4"></i>
+                            <i class="fas fa-star priority-star" data-value="5"></i>
+                        </div>
+                    </div>
+                    <button id="save-quote"><i class="fas fa-save"></i> Save Quote</button>
+                </div>
+
+                <div class="card">
+                    <h2><i class="fas fa-quote-right"></i> Favorite Quotes</h2>
+                    <div id="quotes-container">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-text">
+                <p>Maybe the true goal is to build a life you dont need to escape from</p>
+                <p>©Meow-Mafia </p>
+            </div>
+        </footer>
+    </div>
+
+    <div class="floating-btn" id="new-entry-btn">
+        <i class="fas fa-plus"></i>
+    </div>
+
+    <script>
+        // Data storage
+        let goals = JSON.parse(localStorage.getItem('goals')) || [];
+        let deadlines = JSON.parse(localStorage.getItem('deadlines')) || [];
+        let learnings = JSON.parse(localStorage.getItem('learnings')) || [];
+        let quotes = JSON.parse(localStorage.getItem('quotes')) || [];
+        let selectedQuotePriority = 3;
+
+        // Create stars for background
+        function createStars() {
+            const container = document.getElementById('starry-background');
+            for (let i = 0; i < 150; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.width = `${Math.random() * 3}px`;
+                star.style.height = star.style.width;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                star.style.animationDelay = `${Math.random() * 2}s`;
+                container.appendChild(star);
+            }
+        }
+
+        // Create heart animation
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-animation');
+            heart.innerHTML = '<i class="fas fa-heart" style="color: #bf616a;"></i>';
+            heart.style.left = `${Math.random() * 80 + 10}%`;
+            heart.style.top = `${Math.random() * 80 + 10}%`;
+            
+            // Set end position for animation
+            const endX = Math.random() * 100;
+            const endY = Math.random() * 100;
+            heart.style.setProperty('--x', `${endX}px`);
+            heart.style.setProperty('--y', `${endY}px`);
+            
+            document.body.appendChild(heart);
+            
+            // Remove after animation completes
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        // Initialize Typed.js for the header
+        function initTyped() {
+            const options = {
+                strings: [
+                    "Growing together through knowledge and love...",
+                    "A state where focus and passion erase all sense of self...",
+                    "Life moves fast. enjoy the little moments...",
+                    "If its meant to be then it will be...",
+                    "It all ends on a random afternoon....",
+                    "Lost but at peace, Alone but never lonely...",
+                    "What you persist, resist. What you accept, dissolves...."
+                ],
+                typeSpeed: 50,
+                backSpeed: 30,
+                backDelay: 2000,
+                loop: true
+            };
+            
+            new Typed('#typed-text', options);
+        }
+
+        // Initialize navigation
+        function initNavigation() {
+            const navItems = document.querySelectorAll('.nav-item');
+            const pages = document.querySelectorAll('.page');
+            
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const target = item.getAttribute('data-target');
+                    
+                    // Update active nav item
+                    navItems.forEach(navItem => navItem.classList.remove('active'));
+                    item.classList.add('active');
+                    
+                    // Show target page
+                    pages.forEach(page => page.classList.remove('active'));
+                    document.getElementById(`${target}-page`).classList.add('active');
+                });
+            });
+        }
+
+        // Initialize tabs
+        function initTabs() {
+            const tabs = document.querySelectorAll('.tab');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabName = tab.getAttribute('data-tab');
+                    
+                    // Update active tab
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    // Update chart based on tab
+                    updateProgressChart(tabName);
+                });
+            });
+        }
+
+        // Update progress chart based on selected tab
+        function updateProgressChart(tab) {
+            const ctx = document.getElementById('progress-chart').getContext('2d');
+            
+            // Clear any existing chart
+            if (window.progressChart) {
+                window.progressChart.destroy();
+            }
+            
+            let data, label, backgroundColor;
+            
+            switch(tab) {
+                case 'gpa':
+                    data = [7.5, 7.6, 7.7, 7.8, 7.9, 8.0, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6];
+                    label = 'GPA Trend';
+                    backgroundColor = 'rgba(125, 143, 161, 0.5)';
+                    break;
+                case 'goals':
+                    data = [5, 8, 10, 12, 15, 18, 22, 25, 28, 30, 32, 35];
+                    label = 'Goals Completed';
+                    backgroundColor = 'rgba(163, 190, 140, 0.5)';
+                    break;
+                case 'time':
+                    data = [3, 4, 5, 4.5, 5.5, 6, 5.2, 5.8, 6.2, 5.9, 6.1, 6.3];
+                    label = 'Study Hours (Daily Average)';
+                    backgroundColor = 'rgba(235, 203, 139, 0.5)';
+                    break;
+                default:
+                    data = [7.5, 7.6, 7.7, 7.8, 7.9, 8.0, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6];
+                    label = 'GPA Trend';
+                    backgroundColor = 'rgba(125, 143, 161, 0.5)';
+            }
+            
+            window.progressChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    datasets: [{
+                        label: label,
+                        data: data,
+                        backgroundColor: backgroundColor,
+                        borderColor: 'rgba(255, 255, 255, 0.7)',
+                        borderWidth: 2,
+                        pointBackgroundColor: 'rgba(255, 255, 255, 0.9)',
+                        pointRadius: 4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: tab !== 'gpa',
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.7)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.7)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'rgba(255, 255, 255, 0.7)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Initialize countdown timer
+        function initCountdown() {
+            // Set target date (example: 3 months from now)
+            const targetDate = new Date("2025-08-12");
+            targetDate.setMonth(targetDate.getMonth() + 3);
+            
+            function updateCountdown() {
+                const now = new Date();
+                const difference = targetDate - now;
+                
+                if (difference <= 0) {
+                    document.getElementById('days').textContent = '0';
+                    document.getElementById('hours').textContent = '0';
+                    document.getElementById('minutes').textContent = '0';
+                    document.getElementById('seconds').textContent = '0';
+                    return;
+                }
+                
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+                document.getElementById('seconds').textContent = seconds;
+            }
+            
+            // Update countdown immediately and then every second
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
+
+        // Save data to localStorage
+        function saveData() {
+            localStorage.setItem('goals', JSON.stringify(goals));
+            localStorage.setItem('deadlines', JSON.stringify(deadlines));
+            localStorage.setItem('learnings', JSON.stringify(learnings));
+            localStorage.setItem('quotes', JSON.stringify(quotes));
+            
+            // Update counts
+            document.getElementById('goals-count').textContent = goals.length;
+            document.getElementById('deadlines-count').textContent = deadlines.length;
+            document.getElementById('learnings-count').textContent = learnings.length;
+        }
+
+        // Add a new goal
+        function addGoal(title, description, deadline, priority) {
+            const id = Date.now().toString();
+            goals.push({ id, title, description, deadline, priority });
+            saveData();
+            renderGoals();
+        }
+
+        // Delete a goal
+        function deleteGoal(id) {
+            goals = goals.filter(goal => goal.id !== id);
+            saveData();
+            renderGoals();
+        }
+
+        // Add a new deadline
+        function addDeadline(title, date, course, priority) {
+            const id = Date.now().toString();
+            deadlines.push({ id, title, date, course, priority });
+            saveData();
+            renderDeadlines();
+        }
+
+        // Delete a deadline
+        function deleteDeadline(id) {
+            deadlines = deadlines.filter(deadline => deadline.id !== id);
+            saveData();
+            renderDeadlines();
+        }
+
+        // Add a new learning
+        function addLearning(title, category, date, description) {
+            const id = Date.now().toString();
+            learnings.push({ id, title, category, date, description });
+            saveData();
+            renderLearnings();
+        }
+
+        // Delete a learning
+        function deleteLearning(id) {
+            learnings = learnings.filter(learning => learning.id !== id);
+            saveData();
+            renderLearnings();
+        }
+
+        // Add a new quote
+        function addQuote(text, author, category, priority) {
+            const id = Date.now().toString();
+            quotes.push({ id, text, author, category, priority });
+            saveData();
+            renderQuotes();
+        }
+
+        // Delete a quote
+        function deleteQuote(id) {
+            quotes = quotes.filter(quote => quote.id !== id);
+            saveData();
+            renderQuotes();
+        }
+
+        // Render goals
+        function renderGoals() {
+            const container = document.getElementById('current-goals');
+            
+            if (goals.length === 0) {
+                container.innerHTML = '<div class="empty-state">No goals yet. Set your first goal!</div>';
+                return;
+            }
+            
+            container.innerHTML = goals.map(goal => `
+                <div class="academic-goal">
+                    <button class="delete-btn" data-id="${goal.id}" data-type="goal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="goal-header">
+                        <div class="goal-title">${goal.title}</div>
+                        <div class="goal-date">${new Date(goal.deadline).toLocaleDateString()}</div>
+                    </div>
+                    <p>${goal.description}</p>
+                    <div class="quote-priority">
+                        <span class="priority-badge priority-${goal.priority}">${goal.priority} priority</span>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Add event listeners to delete buttons
+            document.querySelectorAll('.delete-btn[data-type="goal"]').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const id = e.currentTarget.getAttribute('data-id');
+                    deleteGoal(id);
+                });
+            });
+        }
+
+        // Render deadlines
+        function renderDeadlines() {
+            const container = document.getElementById('upcoming-deadlines');
+            
+            if (deadlines.length === 0) {
+                container.innerHTML = '<div class="empty-state">No deadlines yet. Add your first deadline!</div>';
+                return;
+            }
+            
+            // Sort by date and get the 3 most upcoming deadlines
+            const upcomingDeadlines = deadlines.sort((a, b) => new Date(a.date) - new Date(b.date)).slice(0, 3);
+            
+            container.innerHTML = upcomingDeadlines.map(deadline => `
+                <div class="deadline-item">
+                    <div class="deadline-info">
+                        <div class="deadline-title">${deadline.title}</div>
+                        <div class="deadline-date">${new Date(deadline.date).toLocaleDateString()} • ${deadline.course}</div>
+                    </div>
+                    <div class="deadline-actions">
+                        <span class="priority-badge priority-${deadline.priority}">${deadline.priority}</span>
+                        <button class="delete-btn" data-id="${deadline.id}" data-type="deadline">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Add event listeners to delete buttons
+            document.querySelectorAll('.delete-btn[data-type="deadline"]').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const id = e.currentTarget.getAttribute('data-id');
+                    deleteDeadline(id);
+                });
+            });
+        }
+
+        // Render learnings
+        function renderLearnings() {
+            const container = document.getElementById('learnings-container');
+            const recentContainer = document.getElementById('recent-learnings');
+            
+            if (learnings.length === 0) {
+                container.innerHTML = '<div class="empty-state">No learnings yet. Add your first learning!</div>';
+                recentContainer.innerHTML = '<div class="empty-state">No learnings yet. Add your first learning!</div>';
+                return;
+            }
+            
+            // Render all learnings
+            container.innerHTML = learnings.map(learning => `
+                <div class="learning-item">
+                    <button class="delete-btn" data-id="${learning.id}" data-type="learning">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="learning-category">${learning.category}</div>
+                    <h3>${learning.title}</h3>
+                    <p>${learning.description}</p>
+                    <div class="entry-date">${new Date(learning.date).toLocaleDateString()}</div>
+                </div>
+            `).join('');
+            
+            // Render recent learnings (last 3)
+            const recentLearnings = learnings.slice(-3).reverse();
+            recentContainer.innerHTML = recentLearnings.map(learning => `
+                <div class="entry">
+                    <div class="entry-date">${new Date(learning.date).toLocaleDateString()}</div>
+                    <div class="entry-content">${learning.title}</div>
+                    <p>${learning.description}</p>
+                </div>
+            `).join('');
+            
+            // Add event listeners to delete buttons
+            document.querySelectorAll('.delete-btn[data-type="learning"]').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const id = e.currentTarget.getAttribute('data-id');
+                    deleteLearning(id);
+                });
+            });
+        }
+
+        // Render quotes
+        function renderQuotes() {
+            const container = document.getElementById('quotes-container');
+            const favoriteContainer = document.getElementById('favorite-quote');
+            
+            if (quotes.length === 0) {
+                container.innerHTML = '<div class="empty-state">No quotes yet. Add your first quote!</div>';
+                favoriteContainer.innerHTML = '<div class="empty-state">No quotes yet. Add your first quote!</div>';
+                return;
+            }
+            
+            // Render all quotes
+            container.innerHTML = quotes.map(quote => `
+                <div class="quote-item">
+                    <button class="delete-btn" data-id="${quote.id}" data-type="quote">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="quote-text">"${quote.text}"</div>
+                    <div class="quote-author">- ${quote.author}</div>
+                    <div class="quote-priority">
+                        <span class="priority-badge priority-${quote.category}">${quote.category}</span>
+                        <div>Priority: ${'★'.repeat(quote.priority)}</div>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Get a random quote for the favorite section
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            favoriteContainer.innerHTML = `
+                <div class="quote">
+                    <div class="quote-text">"${randomQuote.text}"</div>
+                    <div class="quote-author">- ${randomQuote.author}</div>
+                </div>
+            `;
+            
+            // Add event listeners to delete buttons
+            document.querySelectorAll('.delete-btn[data-type="quote"]').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const id = e.currentTarget.getAttribute('data-id');
+                    deleteQuote(id);
+                });
+            });
+        }
+
+        // Initialize form handlers
+        function initFormHandlers() {
+            // Goal form
+            document.getElementById('save-goal').addEventListener('click', () => {
+                const title = document.getElementById('goal-title').value;
+                const description = document.getElementById('goal-description').value;
+                const deadline = document.getElementById('goal-deadline').value;
+                const priority = document.getElementById('goal-priority').value;
+                
+                if (title && description && deadline) {
+                    addGoal(title, description, deadline, priority);
+                    
+                    // Clear form
+                    document.getElementById('goal-title').value = '';
+                    document.getElementById('goal-description').value = '';
+                    document.getElementById('goal-deadline').value = '';
+                    document.getElementById('goal-priority').value = 'high';
+                    
+                    alert('Goal saved successfully!');
+                } else {
+                    alert('Please fill all fields');
+                }
+            });
+            
+            // Deadline form
+            document.getElementById('save-deadline').addEventListener('click', () => {
+                const title = document.getElementById('deadline-title').value;
+                const date = document.getElementById('deadline-date').value;
+                const course = document.getElementById('deadline-course').value;
+                const priority = document.getElementById('deadline-priority').value;
+                
+                if (title && date && course) {
+                    addDeadline(title, date, course, priority);
+                    
+                    // Clear form
+                    document.getElementById('deadline-title').value = '';
+                    document.getElementById('deadline-date').value = '';
+                    document.getElementById('deadline-course').value = '';
+                    document.getElementById('deadline-priority').value = 'high';
+                    
+                    alert('Deadline saved successfully!');
+                } else {
+                    alert('Please fill all fields');
+                }
+            });
+            
+            // Learning form
+            document.getElementById('save-learning').addEventListener('click', () => {
+                const title = document.getElementById('learning-title').value;
+                const category = document.getElementById('learning-category').value;
+                const date = document.getElementById('learning-date').value || new Date().toISOString().split('T')[0];
+                const description = document.getElementById('learning-description').value;
+                
+                if (title && description) {
+                    addLearning(title, category, date, description);
+                    
+                    // Clear form
+                    document.getElementById('learning-title').value = '';
+                    document.getElementById('learning-category').value = 'mathematics';
+                    document.getElementById('learning-date').value = '';
+                    document.getElementById('learning-description').value = '';
+                    
+                    alert('Learning saved successfully!');
+                } else {
+                    alert('Please fill all fields');
+                }
+            });
+            
+            // Quote form
+            document.getElementById('save-quote').addEventListener('click', () => {
+                const text = document.getElementById('quote-text').value;
+                const author = document.getElementById('quote-author').value;
+                const category = document.getElementById('quote-category').value;
+                
+                if (text && author) {
+                    addQuote(text, author, category, selectedQuotePriority);
+                    
+                    // Clear form
+                    document.getElementById('quote-text').value = '';
+                    document.getElementById('quote-author').value = '';
+                    document.getElementById('quote-category').value = 'love';
+                    
+                    // Reset stars
+                    document.querySelectorAll('.priority-star').forEach(star => {
+                        star.classList.remove('active');
+                    });
+                    document.querySelectorAll('.priority-star[data-value="3"]').forEach(star => {
+                        star.classList.add('active');
+                    });
+                    selectedQuotePriority = 3;
+                    
+                    alert('Quote saved successfully!');
+                } else {
+                    alert('Please fill all fields');
+                }
+            });
+            
+            // Priority stars for quotes
+            document.querySelectorAll('.priority-star').forEach(star => {
+                star.addEventListener('click', () => {
+                    const value = parseInt(star.getAttribute('data-value'));
+                    selectedQuotePriority = value;
+                    
+                    // Remove active class from all stars
+                    document.querySelectorAll('.priority-star').forEach(s => {
+                        s.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked star and all lower ones
+                    document.querySelectorAll('.priority-star').forEach(s => {
+                        if (parseInt(s.getAttribute('data-value')) <= value) {
+                            s.classList.add('active');
+                        }
+                    });
+                });
+            });
+            
+            // Set default priority
+            document.querySelectorAll('.priority-star[data-value="3"]').forEach(star => {
+                star.classList.add('active');
+            });
+        }
+
+        // Initialize the application
+        function init() {
+            createStars();
+            initTyped();
+            initNavigation();
+            initTabs();
+            initCountdown();
+            initFormHandlers();
+            updateProgressChart('gpa');
+            
+            // Load existing data
+            renderGoals();
+            renderDeadlines();
+            renderLearnings();
+            renderQuotes();
+            
+            // Add random heart animations occasionally
+            setInterval(createHeart, 8000);
+            
+            // Add click effect for the floating button
+            document.getElementById('new-entry-btn').addEventListener('click', () => {
+                createHeart();
+                
+                // Show a notification
+                const notification = document.createElement('div');
+                notification.style.position = 'fixed';
+                notification.style.bottom = '100px';
+                notification.style.right = '30px';
+                notification.style.background = 'rgba(44, 62, 80, 0.9)';
+                notification.style.color = 'white';
+                notification.style.padding = '15px';
+                notification.style.borderRadius = '8px';
+                notification.style.zIndex = '1000';
+                notification.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
+                notification.textContent = 'What would you like to add?';
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.remove();
+                }, 3000);
+            });
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
